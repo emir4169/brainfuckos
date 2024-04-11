@@ -8,7 +8,7 @@
     .long CHECKSUM
 
 .section .text
-.extern kernelMain
+.extern kernalMain
 .global loader
 
 # Load the kernal and get into an inifinte loop
@@ -16,7 +16,7 @@ loader:
     mov $kernel_stack, %esp
     push %eax
     push %ebx
-    call kernelMain
+    call kernalMain
 # incase for whatever reason the loader escapes the loop, trap it in another one.
 _stop:
     cli
